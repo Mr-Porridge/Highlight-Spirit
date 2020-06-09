@@ -1,8 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a1f7191f-460c-4ffd-965a-1c1e6d371ba6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/.babelrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/.postcssrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/build/build.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/build/check-versions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/build/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/build/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/build/vue-loader.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/build/webpack.base.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/build/webpack.dev.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/build/webpack.prod.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/config/dev.env.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/config/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/config/prod.env.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/config/test.env.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/HelloWorld.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/router/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/static/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/test/e2e/custom-assertions/elementCount.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/test/e2e/nightwatch.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/test/e2e/runner.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/test/e2e/specs/test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/test/unit/.eslintrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/test/unit/jest.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/test/unit/setup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/test/unit/specs/HelloWorld.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spirit/spirit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1d46iethwriJvyFjSBOVzLTpzIH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$APPLICATION_HOME_DIR$/jbr/bin" />
   </component>
@@ -13,6 +79,7 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="HighlightSpirit.settings" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -30,5 +97,43 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a1f7191f-460c-4ffd-965a-1c1e6d371ba6" name="Default Changelist" comment="" />
+      <created>1591672146889</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1591672146889</updated>
+      <workItem from="1591672148941" duration="982000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1237" height="176" key="GridCell.Tab.0.bottom" timestamp="1591673272825">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1237" height="176" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1591673272825" />
+    <state width="1237" height="176" key="GridCell.Tab.0.center" timestamp="1591673272824">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1237" height="176" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1591673272824" />
+    <state width="1237" height="176" key="GridCell.Tab.0.left" timestamp="1591673272824">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1237" height="176" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1591673272824" />
+    <state width="1237" height="176" key="GridCell.Tab.0.right" timestamp="1591673272825">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state width="1237" height="176" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1591673272825" />
   </component>
 </project>
