@@ -1,0 +1,70 @@
+"""
+    Title: Highlight Spirit v1.0
+    Function: 将 .cpp 文件转换为 HTML 并高亮显示 C++ 代码
+    Author：Mr_Porridge
+    TBC：Django + VUE 实时检测代码并展示高亮 v2.0
+"""
+import string
+
+
+# 词法分析精灵
+class spirit:
+    def __init__(self, raw_string: str):
+        self.raw = raw_string  # 初始化原始文件数据
+        self.de_space()
+        self.furnace = ''  # 词法分析容器
+        self.hold = False
+        self.letters = list(string.ascii_letters)  # 26*2个字母
+        self.separators = [',', ';', '(', ')', '{', '}', '[', ']', ':', '<', '>']  # 分隔符
+        self.underline = '_'  # 下划线
+        self.digits = list(string.digits)  # 0~9数字
+
+    def de_space(self):
+        self.raw = self.raw.replace("\n", "")
+        self.raw = self.raw.replace("\t", "")
+        print(self.raw)
+
+    # 判断读入字符是否为字母
+    def is_letter(self, ch: str) -> bool:
+        return ch in self.letters
+
+    # 判断读入字符是否为下划线
+    def is_underline(self, ch: str) -> bool:
+        return ch == self.underline
+
+    # 判读读入字符是否为分隔符
+    def is_separator(self, ch: str) -> bool:
+        return ch in self.separators
+
+    def analyze(self):
+        self.furnace = ''
+        origin = iter(self.raw)
+        for item in origin:
+            if item == ' ':
+                continue
+            if self.is_letter(item) or self.is_underline(item):
+                temp = item
+                while self.is_letter(temp) or self.is_underline(temp):
+                    self.furnace += temp
+                    temp = next(origin)
+                else:
+                    print("separator is: ", temp)
+                    # origin = iter(temp + str(map(list, origin)))
+                    # print(map(list, origin))
+                    #  = iter(temp + str(origin))
+                print("word is: ", self.furnace)
+                self.furnace = ''
+                continue
+            if self.is_separator(item):
+                self.furnace = item
+                print("separator is: ", self.furnace)
+                self.furnace = ''
+                continue
+
+
+# 读取文件 采用UTF-8编码 为了防止读取中文出错
+f = open('testCode.cpp', 'r', encoding='UTF-8')
+# 获取文件内容 以字符串形式保存
+elf = spirit(f.read())
+# print(elf.raw)
+elf.analyze()
