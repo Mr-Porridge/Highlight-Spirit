@@ -1,0 +1,40 @@
+body{
+    background: #2F2F2F;
+}
+.sharpe-special{
+    color:orange;
+}
+.arrow-special{
+    color: deeppink;
+}
+.word{
+    color: floralwhite;
+}
+.single-op{
+    color: deeppink;
+}
+.double-op{
+    color: deeppink;;
+}
+.string{
+    color: forestgreen;
+}
+.keyword{
+    color: darkorchid;
+    /*color: mediumslateblue;*/
+}
+.separator{
+    color: floralwhite;
+}
+.number{
+    color: cornflowerblue;
+}
+.illegal{
+    color: crimson;
+}
+.comment{
+    color: gray;
+}
+.escape{
+    color: chocolate;
+}
