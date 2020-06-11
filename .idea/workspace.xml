@@ -2,15 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1f7191f-460c-4ffd-965a-1c1e6d371ba6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/views/fairy.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fairy/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fairy/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fairy/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fairy/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fairy/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fairy/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fairy/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spirit/code/BULLET.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/spirit/code/BULLET.PP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spirit/spirit.py" beforeDir="false" afterPath="$PROJECT_DIR$/spirit/spirit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HighlightSpirit/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/HighlightSpirit/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HighlightSpirit/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/HighlightSpirit/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/fairy.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/fairy.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +62,7 @@
       <recent name="D:\HighlightSpirit\spirit" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.autoTest">
+  <component name="RunManager" selected="Django server.HighlightSpirit">
     <configuration name="autoTest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="HighlightSpirit" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -154,7 +157,7 @@
       <workItem from="1591704705340" duration="15325000" />
       <workItem from="1591751318536" duration="14491000" />
       <workItem from="1591792096675" duration="7527000" />
-      <workItem from="1591842698257" duration="10955000" />
+      <workItem from="1591842698257" duration="21776000" />
     </task>
     <task id="LOCAL-00001" summary="完成标识符号、分隔符的识别">
       <created>1591720513085</created>
@@ -199,22 +202,22 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="421" y="116" key="FileChooserDialogImpl/0.0.1280.720@0.0.1280.720" timestamp="1591673501299" />
-    <state width="1237" height="212" key="GridCell.Tab.0.bottom" timestamp="1591862876452">
+    <state width="1237" height="42" key="GridCell.Tab.0.bottom" timestamp="1591885154171">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1237" height="212" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1591862876452" />
-    <state width="1237" height="212" key="GridCell.Tab.0.center" timestamp="1591862876452">
+    <state width="1237" height="42" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1591885154171" />
+    <state width="1237" height="42" key="GridCell.Tab.0.center" timestamp="1591885154171">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1237" height="212" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1591862876452" />
-    <state width="1237" height="212" key="GridCell.Tab.0.left" timestamp="1591862876452">
+    <state width="1237" height="42" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1591885154171" />
+    <state width="1237" height="42" key="GridCell.Tab.0.left" timestamp="1591885154171">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1237" height="212" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1591862876452" />
-    <state width="1237" height="212" key="GridCell.Tab.0.right" timestamp="1591862876452">
+    <state width="1237" height="42" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1591885154171" />
+    <state width="1237" height="42" key="GridCell.Tab.0.right" timestamp="1591885154171">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1237" height="212" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1591862876452" />
+    <state width="1237" height="42" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1591885154171" />
     <state width="1237" height="291" key="GridCell.Tab.1.bottom" timestamp="1591720631233">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
