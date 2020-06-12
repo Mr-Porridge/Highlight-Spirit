@@ -6,6 +6,7 @@
     TBC：Use 'Django' and 'Vue' to build a 'Web C++ Editor' with real-time detecting (v2.0)
 """
 import string
+
 # 使用 string 包：用于初始化数字、字母 不用写函数自动生成了
 """
 @使用方法：
@@ -339,6 +340,13 @@ class spirit:
         display.write("</body>\n")
         display.write("</html>\n")
 
+    # HTML接口
+    def render(self):
+        res = ''
+        for item in self.bottle:
+            res += ("<span class=\"" + item['category'] + "\">" + item['value'] + "</span>\n")
+        return res
+
 
 def highlight(name: str):
     # 读取文件 采用UTF-8编码 为了防止读取中文出错
@@ -347,4 +355,5 @@ def highlight(name: str):
     elf = spirit(f.read())
     # print(elf.raw)
     elf.analyze()
+    print(elf.bottle)
     elf.magic_wand(name)
