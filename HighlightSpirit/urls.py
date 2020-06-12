@@ -20,4 +20,5 @@ from fairy import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('highlight/', views.highlight),
+    path('email/', views.email),
 ]

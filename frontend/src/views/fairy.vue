@@ -3,13 +3,18 @@
     <!--Content-->
     <el-container>
       <!--头部标题-->
-      <el-header>Highlight Fairy【C++ 代码高亮】</el-header>
+      <el-header>Highlight Fairy【C++ 代码高亮】
+        <el-button type="danger" size="mini" class="op-btn" @click="cleanAll">清空</el-button>
+        <el-button type="primary" size="mini" class="op-btn" @click="setTemplate">模板</el-button>
+        <el-button type="success" size="mini" class="op-btn" @click="open">保存</el-button>
+      </el-header>
       <!--UI 界面-->
       <el-container>
         <!--左侧代码输入框 st-->
         <el-aside width="50%">
           <!--用户输入组件-->
           <el-input
+            class="a"
             id="userInput"
             type="textarea"
             :autosize="{ minRows: 27, maxRows: 500}"
@@ -48,9 +53,17 @@
           '\tcout << "Hello world!\\t" << endl;\n' +
           '\treturn 0;\n' +
           '}',
+        temp: '#include <iostream>\n' +
+          'using namespace std;\n' +
+          'int main() {\n' +
+          '\tfloat num = 5.20;\n' +
+          '\tcout << "Hello world!\\t" << endl;\n' +
+          '\treturn 0;\n' +
+          '}',
         opLeft: ['(', '[', '{'],
         opRight: [')', ']', '}'],
-        beauty: ''
+        beauty: '',
+        userName: '',
       }
     },
     methods: {
@@ -66,9 +79,50 @@
           console.log(res)
         });
       },
+      open() {
+        this.$prompt('请输入邮箱', 'Highlight Fairy', {
+          confirmButtonText: '确认发送',
+          cancelButtonText: '容我三思',
+          inputPattern: /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/,
+          inputErrorMessage: '邮箱格式不正确'
+        }).then(({value}) => {
+          this.userName = value;
+          this.send();
+          this.$message({
+            type: 'success',
+            message: '已发送至: ' + value
+          });
+        }).catch(() => {
+          this.$message({
+            type: 'info',
+            message: '取消发送'
+          });
+        });
+      },
+      send() {
+        let raw = {'user': this.userName, 'content': this.code + "\n"};
+        axios({
+          method: "post",
+          url: "http://localhost:8000/email/",
+          data: qs.stringify(raw),
+        }).then((res) => {
+          console.log(res);
+        }).catch((res) => {
+          console.log(res);
+        });
+      },
       textareaTab() {
         console.log("e.keyCode");
       },
+      cleanAll() {
+        this.code = '';
+      },
+      setTemplate() {
+        this.code = this.temp;
+      },
+      runCode() {
+        console.log("Running...")
+      }
     },
     watch: {
       code: function (val, old) {
@@ -119,22 +173,29 @@
   }
 
   .el-header {
-    background-color: #B3C0D1;
-    color: #333;
+    margin: 1px 1px 1px 1px;
+    background-color: #2F2F2F;
+    color: floralwhite;
     text-align: center;
     line-height: 60px;
   }
 
   .el-aside {
     text-align: center;
+    width: 50%;
   }
 
   .el-main {
     border-radius: 4px;
-    padding: 0;
-    margin: 0;
-    /*background-color: #E9EEF3;*/
+    padding: 5px;
+    color: white;
+    border-top: 1px solid;
+    border-right: 1px solid;
     background-color: #2F2F2F;
+  }
+
+  .op-btn {
+    margin-left: 1%;
   }
 
   .grid-content >>> .sharpe-special {
@@ -162,8 +223,7 @@
   }
 
   .grid-content >>> .keyword {
-    color: darkorchid;
-    /*color: mediumslateblue;*/
+    color: mediumorchid;
   }
 
   .grid-content >>> .separator {
