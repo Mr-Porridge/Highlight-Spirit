@@ -5,6 +5,7 @@
     Author：Mr_Porridge
     TBC：Use 'Django' and 'Vue' to build a 'Web C++ Editor' with real-time detecting (v2.0)
 """
+import json
 import string
 
 # 使用 string 包：用于初始化数字、字母 不用写函数自动生成了
@@ -22,6 +23,8 @@ class spirit:
         self.raw = raw_string  # 初始化原始文件数据
         # self.de_space()
         # 现在使用直接复制方法初始化 之后使用json进行初始化【之后需要改进】
+        self.keywords = []
+        self.init_keywords()  # 初始化关键字
         self.furnace = ''  # 词法分析容器
         self.letters = list(string.ascii_letters)  # 26*2个字母
         self.separators = [',', ';', '(', ')', '{', '}', '[', ']']  # 分隔符
@@ -34,18 +37,19 @@ class spirit:
         self.double_quote = '\"'  # 双引号
         self.slash = '\\'  # \ 用于转义
         self.digits = list(string.digits)  # 0~9数字
-        self.keywords = ['auto', 'break', 'bool', 'catch', 'char', 'cin', 'class', 'const', 'cout', 'default', 'delete',
-                         'double', 'else', 'extern', 'false', 'float', 'for', 'friend', 'goto', 'if', 'include',
-                         'inline', 'int', 'long', 'namespace', 'new', 'operator', 'private', 'protected', 'public',
-                         'return', 'short', 'signed', 'sizeof', 'static', 'stdio', 'string', 'struct', 'template',
-                         'this', 'this', 'throw', 'true', 'try', 'typedef', 'union', 'using', 'unsigned', 'virtual',
-                         'virtual', 'void', 'while']
         self.tab = '\t'  # 制表符 缩进
         self.enter = '\n'  # 回车换行
         self.single_op = ["%", "!", "^", '&', '|']  # 第一类操作符 包含 && 和 || 拆分成单个渲染即可
         self.double_op = ['+', '-', '=', '>', '<', '*', ':']  # 第二类操作符 有可能两个相同 or <= >= += -=
         # 存储结果
         self.bottle = []
+
+    def init_keywords(self):
+        file = open('spirit/keywords.json', 'r')  # HTML
+        # file = open('./keywords.json', 'r')  # terminal
+        text = file.read()
+        file.close()
+        self.keywords = json.loads(text)["data"]["c"]
 
     def de_space(self):
         self.raw = self.raw.replace("\n", "")
@@ -189,6 +193,13 @@ class spirit:
                         self.bottle.append({"category": "arrow-special", "value": self.furnace})
                         self.furnace = ''
                         continue
+                    elif self.raw[i + 1] == '-':
+                        self.furnace += self.raw[i + 1]
+                        pointer = i + 1
+                        # print("arrow-special ", self.furnace)
+                        self.bottle.append({"category": "double-op", "value": self.furnace})
+                        self.furnace = ''
+                        continue
                     else:
                         # print("single-op ", self.furnace)
                         self.bottle.append({"category": "single-op", "value": self.furnace})
@@ -253,8 +264,9 @@ class spirit:
                     # 其它则为除号
                     else:
                         # print("single operator: ", self.furnace)
-                        self.furnace = ''
                         pointer -= 1
+                        self.bottle.append({"category": "single-op", "value": self.furnace})
+                        self.furnace = ''
                         continue
                     # print("comment: ", self.furnace)
                     self.bottle.append({"category": "comment", "value": self.furnace})
@@ -331,10 +343,12 @@ class spirit:
         display.write("<html>\n")
         display.write("<head>\n")
         display.write("<title>" + filename + "</title>\n")
+        # 引用可自定义的样式
         display.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"highlight.css\">\n")
         display.write("<meta charset=\"utf-8\">\n")
         display.write("</head>\n")
         display.write("<body>\n")
+        # 分词结果构造HTML
         for item in self.bottle:
             display.write("<span class=\"" + item['category'] + "\">" + item['value'] + "</span>\n")
         display.write("</body>\n")
@@ -355,5 +369,5 @@ def highlight(name: str):
     elf = spirit(f.read())
     # print(elf.raw)
     elf.analyze()
-    print(elf.bottle)
+    # print(elf.bottle)
     elf.magic_wand(name)

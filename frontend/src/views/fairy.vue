@@ -71,7 +71,7 @@
         let raw = {'code': this.code + "\n"};
         axios({
           method: "post",
-          url: "http://localhost:8000/highlight/",
+          url: "/highlight/",
           data: qs.stringify(raw),
         }).then((res) => {
           this.beauty = res.data;
@@ -103,7 +103,7 @@
         let raw = {'user': this.userName, 'content': this.code + "\n"};
         axios({
           method: "post",
-          url: "http://localhost:8000/email/",
+          url: "/email/",
           data: qs.stringify(raw),
         }).then((res) => {
           console.log(res);
@@ -112,7 +112,7 @@
         });
       },
       textareaTab() {
-        console.log("e.keyCode");
+        // console.log("e.keyCode");
       },
       cleanAll() {
         this.code = '';
@@ -132,7 +132,7 @@
         // if (index >= 0) {
         //   this.code += this.opRight[index];
         // }
-        this.code = this.code.replace("  ", "\t");
+        // this.code = this.code.replace("  ", "\t"); 改用监听tab
         this.init();
       }
     },
@@ -141,18 +141,69 @@
       // 全局监听键盘事件
       document.onkeydown = function (e) {
         let key = window.event.keyCode; // tab的值为9
+        // console.log(event.shiftKey);
+        // console.log(key);
         if (key === 9) {
+          // 阻止默认事件
           window.event.preventDefault();
+          // 获取输入框信息
           let elInput = document.getElementById("userInput");
           let startPos = elInput.selectionStart;
           let endPos = elInput.selectionEnd;
           if (startPos === undefined || endPos === undefined) return;
           let txt = elInput.value;
+          // 插入文本
           elInput.value = txt.substring(0, startPos) + "\t" + txt.substring(endPos); // 中间为插入文本
           elInput.focus();
           elInput.selectionStart = startPos + 1; // 插入字符的长度
           elInput.selectionEnd = startPos + 1; // 插入字符的长度
         }
+        else if (event.shiftKey && event.keyCode === 57) {
+          // 阻止默认事件
+          window.event.preventDefault();
+          // 获取输入框信息
+          let elInput = document.getElementById("userInput");
+          let startPos = elInput.selectionStart;
+          let endPos = elInput.selectionEnd;
+          if (startPos === undefined || endPos === undefined) return;
+          let txt = elInput.value;
+          // 插入文本
+          elInput.value = txt.substring(0, startPos) + "()" + txt.substring(endPos); // 中间为插入文本
+          elInput.focus();
+          elInput.selectionStart = startPos + 1; // 插入字符的长度
+          elInput.selectionEnd = startPos + 1; // 插入字符的长度
+        }
+        else if (event.shiftKey && key === 219) {
+          // 阻止默认事件
+          window.event.preventDefault();
+          // 获取输入框信息
+          let elInput = document.getElementById("userInput");
+          let startPos = elInput.selectionStart;
+          let endPos = elInput.selectionEnd;
+          if (startPos === undefined || endPos === undefined) return;
+          let txt = elInput.value;
+          // 插入文本
+          elInput.value = txt.substring(0, startPos) + "{}" + txt.substring(endPos); // 中间为插入文本
+          elInput.focus();
+          elInput.selectionStart = startPos + 1; // 插入字符的长度
+          elInput.selectionEnd = startPos + 1; // 插入字符的长度
+        }
+        else if (key === 219) {
+          // 阻止默认事件
+          window.event.preventDefault();
+          // 获取输入框信息
+          let elInput = document.getElementById("userInput");
+          let startPos = elInput.selectionStart;
+          let endPos = elInput.selectionEnd;
+          if (startPos === undefined || endPos === undefined) return;
+          let txt = elInput.value;
+          // 插入文本
+          elInput.value = txt.substring(0, startPos) + "[]" + txt.substring(endPos); // 中间为插入文本
+          elInput.focus();
+          elInput.selectionStart = startPos + 1; // 插入字符的长度
+          elInput.selectionEnd = startPos + 1; // 插入字符的长度
+        }
+
       };
     }
   }
@@ -203,7 +254,7 @@
   }
 
   .grid-content >>> .arrow-special {
-    color: deeppink;
+    color: turquoise;
   }
 
   .grid-content >>> .word {
@@ -215,7 +266,7 @@
   }
 
   .grid-content >>> .double-op {
-    color: deeppink;;
+    color: turquoise;
   }
 
   .grid-content >>> .string {

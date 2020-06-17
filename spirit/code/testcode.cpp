@@ -1,23 +1,27 @@
 #include <iostream>
-#define test_define = 'test'
+#define TEST = 'test'
 using namespace std;
+// 定义类
+class Test
+{
+public:
+	Display();
+private:
+	static int a;
+}
+Test:: a;
+
+/*
+      换行注释
+      主函数
+*/
 int main() {
-	int i = 0, p = 12;
-	float /number = 5.897.78
-	p -> ope3
-	char space = 32, ch;
-	char dst[10000] = { '123\t\n' };
-	cout << "请输入代码(以'#'结束):\n" << endl;
+	float num = 8.78;
 	const char* fpath = "input.txt";
-	fWrite(fp, fpath, ch, src, dst);
-	/*
-	    这也是注释啊
-	*/
-	Preprocessing(src, dst);
-	// 这是注释
-	p++;
-	p--;
-	p -= 2;
-	p +=2 ;
+	num-- ;
+	num+= 5;
+	num::op;
+	num->intPart = 6;
+	cout << "Hello world!\t\n" << endl;
 	return 0;
 }
